@@ -1,0 +1,55 @@
+---
+layout: default
+current: home
+class: 'home-template'
+navigation: True
+---
+
+<!-- < default -->
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<!-- The big featured header, it uses blog cover image as a BG if available -->
+<header class="site-header {% if page.cover or site.cover %}" style="background-image:  url({{ site.baseurl }}{% if page.cover %}{{ page.cover }}{% elsif site.cover %}{{ site.cover }}{% endif %}) {% else %}no-cover{% endif %}">
+    <a href="{{site.base_url}}">
+        <figure class="hero home-only">
+            <picture>
+                <source srcset="/assets/images/header.jpg" media="(min-width: 1040px)">
+                <source srcset="/assets/images/header-med.jpg" media="(min-width: 600px)">
+                <source srcset="/assets/images/header-small.jpg">
+                <img src="/assets/images/header-medium.jpg" alt="Yawn of the Dad blog">
+            </picture>
+        </figure>
+    </a>
+    {% include site-nav.html %}
+</header>
+
+<style>
+    .hero img {
+        width: 100%;
+    }
+    .site-header {
+        padding: 0;
+    }
+
+    @media screen and (min-width: 900px) {
+        .home-template .post-feed {
+            margin-top: 30px;
+        }
+        .home-template .site-nav {
+            top: 0;
+        }
+    }
+</style>
+
+<!-- The main content area -->
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <div class="post-feed">
+            <!-- The tag below includes the markup for each post - partials/post-card.hbs -->
+            {%  include post-card.html %}
+        </div>
+
+    </div>
+</main>
