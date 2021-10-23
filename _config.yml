@@ -35,6 +35,7 @@ defaults:
       type: posts
     values:
       current: post
+      layout: post
       navigation: true
       class: post-template
       subclass: 'post'
