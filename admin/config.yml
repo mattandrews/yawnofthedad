@@ -12,6 +12,7 @@ collections:
     extension: 'markdown'
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    preview_path: "{{filename}}.{{extension}}"
     fields:
       - { label: 'Current', name: 'current', widget: 'hidden', default: "post" }
       - { label: 'Layout', name: 'layout', widget: 'hidden', default: "post" }
