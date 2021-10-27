@@ -76,4 +76,5 @@ exclude:
   - script.py
   - changelog.md
   - "*.Rmd"
+  - "*.sh"
   - .git*
