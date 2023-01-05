@@ -49,6 +49,7 @@
                       {{ words | divided_by:words_per_minute }} min read
                     {% endif %}
                 </span>
+                <time class="post-card-date" datetime="{{ post.date | date:'%e %B %Y' }}">{{ post.date | date:'%e %B %Y' }}</time>
             </footer>
         </div>
     </article>
